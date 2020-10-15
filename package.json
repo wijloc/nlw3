@@ -1,0 +1,25 @@
+{
+  "name": "nlw",
+  "version": "1.0.0",
+  "description": "O happy tem como objetivo melhorar o dia-a-dia das crianças que moram em orfanatos através da conexão entre a comunidade, as entidades e consequentemente as crianças. Seremos o facilitador para que as pessoas dediquem seu tempo para fazer mais crianças felizes!",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wijloc/nlw3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wijloc/nlw3/issues"
+  },
+  "homepage": "https://github.com/wijloc/nlw3#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "nodemon": "^2.0.5"
+  }
+}
