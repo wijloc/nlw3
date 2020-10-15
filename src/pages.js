@@ -2,7 +2,6 @@ const orphanages = require('./database/fakedata.js')
 
 module.exports ={
     index(req,res){
-        const city = req.query.city
         return res.render('index')
     },
     orphanage(req,res){
