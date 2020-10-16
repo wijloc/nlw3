@@ -43,7 +43,7 @@
       </aside>
 
       <main class="animate-appear width-sidebar">
-        <form>
+        <form action="save-orphanage" method="post" onsubmit="validate(event)">
           <fieldset>
             <legend>Dados</legend>
 
@@ -82,6 +82,7 @@
                     name="images"
                     placeholder="Cole o link da foto aqui"
                     required
+                    type="url"
                   />
                   <span onclick="deleteField(event)">
                     <img
