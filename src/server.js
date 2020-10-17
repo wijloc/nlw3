@@ -22,6 +22,8 @@ server
 .get("/orphanages", pages.orphanages)
 .get("/create-orphanage", pages.createOrphanage)
 .post("/save-orphanage", pages.saveOrphanage)
+.get("/schedule-visitation", pages.scheduleVisitation)
+.post("/save-schedule-visitation", pages.saveScheduleVisitation)
 
 //ligar o servidor
 server.listen(5500);

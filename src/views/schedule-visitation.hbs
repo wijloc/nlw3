@@ -20,8 +20,9 @@
   <link rel="stylesheet" href="/css/sidebar.css" />
   <link rel="stylesheet" href="/css/map.css" />
   <link rel="stylesheet" href="/css/buttons.css" />
-  <link rel="stylesheet" href="/css/page-orphanage.css" />
+  <link rel="stylesheet" href="/css/form.css" />
   <link rel="stylesheet" href="/css/orphanage-details.css" />
+  <link rel="stylesheet" href="/css/schedule-visitation.css" />
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap" rel="stylesheet" />
 </head>
 
@@ -37,29 +38,10 @@
     </aside>
 
     <main class="animate-appear width-sidebar">
-      <div class="orphanage-details">
-        <img src="{{orphanage.firstImage}}" alt="{{orphanage.name}}" />
-
-        <div class="images">
-
-          {{#each orphanage.images}}
-          <button onclick="selectImage(event)" class="active" type="button">
-            <img src="{{this}}" alt="{{orphanage.name}}" />
-          </button>
-          {{/each}}
-        </div>
-
+      <div class="orphanage-details">        
         <div class="orphanage-details-content">
           <h1>{{orphanage.name}}</h1>
-          <p>{{orphanage.about}}</p>
-          <div class="map-container">
-            <div id="mapid"></div>
-            <span data-lat="{{orphanage.lat}}" data-lng="{{orphanage.lng}}"></span>
-            <footer>
-              <a href="https://maps.google.com/mobile?q={{orphanage.lat}}, {{orphanage.lng}}&z=15" target="_blank">Ver
-                rotas no Google Maps</a>
-            </footer>
-          </div>
+          <p>{{orphanage.about}}</p>          
 
           <hr />
 
@@ -88,45 +70,45 @@
             {{/if}}
           </div>
 
-          <div class="contact">
-            <a href="https://api.whatsapp.com/send?l=pt_BR&phone={{orphanage.whatsapp}}&text=Oi, quero conversar sobre visitas no {{orphanage.name}}" target="_blank" type="button"
-              class="primary-button">
-              <img src="/images/whatsapp.svg" alt="Chamar no WhatsApp" />
-              Entrar em contato
-            </a>
-            <a href="schedule-visitation?id={{orphanage.id}}" type="button"
-              class="primary-button">
-              Agendar visitação
-            </a>
-          </div>
-
           <hr />
 
-          <div class="visitations">
-            <h2>Visitas agendadas</h2>
-            {{#each visitations}}
-              <p>{{this.name}}, {{this.visitationdate_formated}}</p>
-            {{/each}}
-          </div>
+          <form action="save-schedule-visitation" method="post" onsubmit="validate(event)">        
+              
+            <fieldset>
+                <legend>Agendamento</legend>
+                <input id="id" name="id" value={{orphanage.id}} hidden>
+                <div class="input-block">
+                    <label for="name">Identificação dos Visitantes <span>Ex.: Willian e Amigos</span></label>
+                    <input id="name" name="name" required />
+                </div>
+
+                <div class="input-block">
+                    <label for="whatsapp">Número de WhatsApp</label>
+                    <input id="whatsapp" name="whatsapp" required />
+                </div>
+
+                <div class="input-block">
+                    <label for="peoplecount">Número de Pessoas</label>
+                    <input id="peoplecount" name="peoplecount" type="number" value="1" min="1" required />
+                </div>
+
+                <div class="input-block">
+                    <label for="visitationdate">Data de Visitação</label>
+                    <input id="visitationdate" name="visitationdate" type="date" required />
+                </div>
+
+                <button type="submit" class="primary-button">Confirmar</button>
+
+            </fieldset>
+
+          </form>          
+
         </div>
       </div>
     </main>
   </div>
 
-  <script src="/scripts/page-orphanage.js"></script>
+  <script src="/scripts/schedule-visitation.js"></script>
 </body>
 
 </html>
-
-<!--
-    HTML
-        HyperText
-            Hipertexto
-        Markup
-            Marcação <tags>
-        Language
-            Linguagem, sintaxe
-    SVG
-        formato de imagem em html, poderoso para diferentes tamanhos de telas
-    Tag inline vs Tag display block: strong vs p
--->

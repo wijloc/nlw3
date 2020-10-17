@@ -18,4 +18,14 @@ Caso tenha dúvidas ou queira obter mais informaçõe sinta-se a vontade para en
 
 ## Melhorias feitas
 
-> Inclusão do ``maxlength`` no campo Sobre na página de inclusão de orfanatos
+* Inclusão do ``maxlength`` no campo Sobre na página de inclusão de orfanatos
+
+* Padronização no tamanho da fonte entre a ``legenda dos formulários`` e os ``títulos``
+
+* Inclusão dos agendamentos na página, refatoração do CSS para evitar redundância
+
+* Validação no formulário de agendamento
+
+* Script para carregar data do dia como padrão do campo de data da visitação
+
+* Criação da estrutura de banco de dados para salvar o agendamento

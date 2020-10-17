@@ -15,7 +15,18 @@ function execute(db){
             opening_hours TEXT,
             open_on_weekends TEXT
         );
-    `)
+    `).then(() => {
+        return db.exec(`
+        CREATE TABLE IF NOT EXISTS visitations(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            orphanage_id INTEGER,
+            name TEXT,
+            whatsapp TEXT,
+            peoplecount INTEGER,
+            visitationdate DATE
+        )
+        `)
+    })
 }
 
 module.exports = Database.open(path.join(__dirname, 'database.sqlite')).then(execute) 

@@ -58,7 +58,6 @@ function deleteField(event){
     if(fieldsContainer.length <= 1){
         //limpar o campo
         span.parentNode.children[0].value="";
-        console.log(span.parentNode)
         return;
     }
 
