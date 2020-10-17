@@ -15,3 +15,7 @@ Foi utilizado o gerenciador de pacotes do node: npm. Para instalação do projet
 
 ## Contato
 Caso tenha dúvidas ou queira obter mais informaçõe sinta-se a vontade para entrar em contato pelas redes sociais disponíveis no meu perfil.
+
+## Melhorias feitas
+
+> Inclusão do ``maxlength`` no campo Sobre na página de inclusão de orfanatos
