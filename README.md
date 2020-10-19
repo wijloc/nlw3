@@ -13,6 +13,8 @@ Foi utilizado o gerenciador de pacotes do node: npm. Para instalação do projet
 
 > npm start
 
+Se tudo ocorrer como esperado, a página estará disponível em localhost:5500 por padrão.
+
 ## Contato
 Caso tenha dúvidas ou queira obter mais informaçõe sinta-se a vontade para entrar em contato pelas redes sociais disponíveis no meu perfil.
 
